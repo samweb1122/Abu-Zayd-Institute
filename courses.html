@@ -1,1 +1,109 @@
-<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Courses</title><link rel='stylesheet' href='css/style.css'></head><body><h1>Our Courses</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses | Abu Zayd Institute</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="english-mode">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-content">
+      <img src="./img/abuzayd.png" alt="Abu Zayd Logo" class="logo" />
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="courses.html" class="active">Courses</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container text-center">
+      <h1>Our Courses</h1>
+      <p>Structured. Authentic. Life-Changing. Start your Islamic journey today.</p>
+      <a href="#register" class="btn">Register Now</a>
+    </div>
+  </section>
+
+  <!-- SEARCH BAR -->
+  <section class="section">
+    <div class="container text-center">
+      <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search courses..." />
+    </div>
+  </section>
+
+  <!-- COURSES SECTION -->
+  <section class="section course-list">
+    <div class="container">
+
+      <!-- Course 1 -->
+      <div class="course-card" data-title="Qur'an Memorization">
+        <h3>Qur'an Memorization</h3>
+        <p>Memorize the Qur’an with proper tajweed and one-on-one guidance.</p>
+        <p><strong>Price:</strong> ₦25,000 / $28 / Month</p>
+        <p><strong>Age Group:</strong> 10+ years</p>
+        <a class="btn" href="https://wa.me/2349073528916?text=I%20want%20to%20register%20for%20Qur'an%20Memorization" target="_blank">Register</a>
+      </div>
+
+      <!-- Course 2 -->
+      <div class="course-card" data-title="Islamic Studies">
+        <h3>Islamic Studies</h3>
+        <p>Learn Hadith, Fiqh, Aqeedah, Akhlaaq and more in a structured way.</p>
+        <p><strong>Price:</strong> ₦30,000 / $34 / Month</p>
+        <p><strong>Age Group:</strong> 10+ years</p>
+        <a class="btn" href="https://wa.me/2349073528916?text=I%20want%20to%20register%20for%20Islamic%20Studies" target="_blank">Register</a>
+      </div>
+
+      <!-- Course 3 -->
+      <div class="course-card" data-title="Personal Development">
+        <h3>Personal Development</h3>
+        <p>Coaching on confidence, time management, goals, identity, and self-discipline.</p>
+        <p><strong>Price:</strong> ₦50,000 / $57 / Month</p>
+        <p><strong>Age Group:</strong> 15 – 35 years</p>
+        <a class="btn" href="https://wa.me/2349073528916?text=I%20want%20to%20register%20for%20Personal%20Development" target="_blank">Register</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REGISTER CTA -->
+  <section id="register" class="section contact-section text-center">
+    <h2>Register Quickly via WhatsApp</h2>
+    <p>Click below to message our admin and secure your spot.</p>
+    <a href="https://wa.me/2349073528916?text=I%20want%20to%20register%20for%20a%20course%20at%20Abu%20Zayd%20Institute" target="_blank" class="btn">📲 Register on WhatsApp</a>
+  </section>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/2349073528916" class="whatsapp-float" target="_blank">💬 Chat Now</a>
+
+  <!-- FOOTER -->
+  <footer class="footer text-center">
+    <div class="container">
+      <p>&copy; 2025 Abu Zayd Institute. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SEARCH FUNCTION -->
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const courseCards = document.querySelectorAll(".course-card");
+
+    searchInput.addEventListener("input", () => {
+      const term = searchInput.value.toLowerCase();
+      courseCards.forEach(card => {
+        const title = card.getAttribute("data-title").toLowerCase();
+        card.style.display = title.includes(term) ? "block" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>
