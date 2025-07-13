@@ -1,558 +1,161 @@
-/* RESET & BASE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  line-height: 1.6;
-  transition: background 0.3s ease;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-/* REUSABLE UTILITY CLASSES */
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.text-center {
-  text-align: center;
-}
-
-/* HEADER */
-.header {
-  background-color: #006b3c;
-  color: white;
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.logo {
-  max-height: 60px;
-}
-
-.nav-list {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.nav-list li a,
-.nav-btn {
-  color: white;
-  font-weight: bold;
-  padding: 10px 16px;
-  background: transparent;
-  border: 2px solid transparent;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-.nav-list li a:hover,
-.nav-list li a.active,
-.nav-btn:hover {
-  background-color: #004d2a;
-}
-
-/* HERO */
-.hero {
-  background: linear-gradient(135deg, #e6fff0, #ffffff);
-  padding: 80px 20px;
-}
-
-.hero h1 {
-  font-size: 36px;
-  color: #006b3c;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-/* BUTTON */
-.btn {
-  background-color: #28a745;
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #1e7e34;
-}
-
-/* SECTIONS */
-.section {
-  padding: 60px 20px;
-}
-
-/* ABOUT */
-.about h2 {
-  font-size: 28px;
-  color: #006b3c;
-  margin-bottom: 10px;
-}
-
-.about p {
-  max-width: 800px;
-  margin: 0 auto 20px;
-  font-size: 16px;
-}
-
-/* COUNTDOWN */
-.countdown {
-  background-color: #f1f8f5;
-}
-
-.countdown-display {
-  font-size: 24px;
-  font-weight: bold;
-  color: red;
-  margin-top: 10px;
-}
-
-/* TESTIMONIALS */
-.testimonials {
-  background-color: #e8f5e9;
-}
-
-.slider {
-  max-width: 600px;
-  margin: auto;
-  text-align: center;
-}
-
-.slide {
-  display: none;
-  font-size: 16px;
-  font-style: italic;
-  color: #333;
-  padding: 10px;
-}
-
-.slide.active {
-  display: block;
-}
-
-/* WHATSAPP FLOAT */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 50px;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  z-index: 999;
-}
-
-.whatsapp-float:hover {
-  background: #1ebd5f;
-}
-
-/* REGISTER POPUP */
-.popup-overlay {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.popup-form {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
-  position: relative;
-  text-align: center;
-}
-
-.popup-form h2 {
-  color: #006b3c;
-  margin-bottom: 20px;
-}
-
-.popup-form input,
-.popup-form select {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-.popup-form button {
-  width: 100%;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 22px;
-  font-weight: bold;
-  color: #888;
-  cursor: pointer;
-}
-
-.close-btn:hover {
-  color: #000;
-}
-
-/* FOOTER */
-.footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-}
-
-/* LANGUAGE MODE */
-.arabic-mode header {
-  background-color: #004225;
-}
-
-.arabic-mode .btn.switch {
-  background-color: #004225;
-}
-
-.arabic-mode {
-  direction: rtl;
-  text-align: right;
-}
-
-.english-mode {
-  direction: ltr;
-  text-align: left;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .popup-form {
-    padding: 20px;
-  }
-}
-
-
-
-.course-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  padding: 50px 0;
-  text-align: center;
-}
-
-.course-card {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 25px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
-}
-
-.course-card h3 {
-  font-size: 22px;
-  color: #006b3c;
-  margin-bottom: 15px;
-}
-
-.course-card p {
-  margin-bottom: 12px;
-}
-
-.course-card ul {
-  padding-left: 20px;
-  margin-bottom: 15px;
-}
-
-.course-card ul li {
-  margin-bottom: 6px;
-  font-size: 15px;
-}
-
-.course-card .btn {
-  margin-top: 10px;
-}
-
-
-
-
-.search-wrapper {
-  margin: 40px auto 10px;
-  text-align: center;
-}
-
-.search-bar {
-  width: 100%;
-  max-width: 400px;
-  padding: 12px 16px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  outline: none;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.03);
-}
-
-.search-bar:focus {
-  border-color: #28a745;
-  box-shadow: 0 4px 12px rgba(40,167,69,0.2);
-}
-
-
-
-
-
-/* ========== LOGIN PAGE STYLES ========== */
-
-.login-wrapper {
-  min-height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  background-color: #f9f9f9;
-}
-
-.login-box {
-  background: #fff;
-  border-radius: 12px;
-  padding: 40px 30px;
-  max-width: 500px;
-  width: 100%;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
-  text-align: center;
-}
-
-.login-box h2 {
-  font-size: 28px;
-  color: #006b3c;
-  margin-bottom: 20px;
-}
-
-.login-box p {
-  margin-bottom: 25px;
-  font-size: 15px;
-  color: #555;
-}
-
-.login-box input {
-  width: 100%;
-  padding: 12px 14px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-  outline: none;
-  transition: 0.3s;
-}
-
-.login-box input:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 5px rgba(40, 167, 69, 0.2);
-}
-
-.login-box .btn {
-  margin-top: 15px;
-  width: 100%;
-}
-
-.login-box .whatsapp-link {
-  display: inline-block;
-  margin-top: 15px;
-  color: #006b3c;
-  font-weight: bold;
-  text-decoration: underline;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.login-box .whatsapp-link:hover {
-  color: #1e7e34;
-}
-
-
-/* ========== REGISTER PAGE ========== */
-
-.register-wrapper {
-  min-height: 85vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 20px;
-  background-color: #f9f9f9;
-}
-
-.register-box {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 40px 30px;
-  max-width: 550px;
-  width: 100%;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
-  text-align: center;
-}
-
-.register-box h2 {
-  font-size: 28px;
-  color: #006b3c;
-  margin-bottom: 20px;
-}
-
-.register-box p {
-  font-size: 15px;
-  color: #555;
-  margin-bottom: 25px;
-}
-
-.register-box input,
-.register-box select {
-  width: 100%;
-  padding: 12px 14px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-  outline: none;
-}
-
-.register-box input:focus,
-.register-box select:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 6px rgba(40, 167, 69, 0.2);
-}
-
-.register-box .btn {
-  width: 100%;
-  margin-top: 15px;
-}
-
-/* Mobile Responsive */
-@media (max-width: 600px) {
-  .register-box {
-    padding: 30px 20px;
-  }
-}
-
-
-
-/* ========== CONTACT PAGE ========== */
-
-.contact-wrapper {
-  min-height: 85vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 20px;
-  background-color: #f9f9f9;
-}
-
-.contact-box {
-  background: #ffffff;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-  max-width: 600px;
-  width: 100%;
-  text-align: center;
-}
-
-.contact-box h2 {
-  font-size: 28px;
-  color: #006b3c;
-  margin-bottom: 15px;
-}
-
-.contact-box p {
-  font-size: 15px;
-  color: #555;
-  margin-bottom: 25px;
-}
-
-.contact-box form input,
-.contact-box form textarea {
-  width: 100%;
-  padding: 12px 14px;
-  margin: 10px 0;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  outline: none;
-}
-
-.contact-box form input:focus,
-.contact-box form textarea:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 6px rgba(40, 167, 69, 0.2);
-}
-
-.contact-box .btn {
-  width: 100%;
-  margin-top: 15px;
-}
-
-.direct-whatsapp {
-  margin-top: 30px;
-}
-
-.direct-whatsapp p {
-  margin-bottom: 10px;
-  color: #444;
-}
-
-/* Mobile Responsive */
-@media (max-width: 600px) {
-  .contact-box {
-    padding: 30px 20px;
-  }
-}
+{ margin: 0; padding: 0; box-sizing: border-box; }
+
+
+body { font-family: 'Segoe UI', sans-serif; background-color: white; color: black; line-height: 1.6; transition: background 0.3s ease; }
+
+a { text-decoration: none; color: inherit; }
+
+ul { list-style: none; }
+
+.container { width: 90%; max-width: 1100px; margin: auto; }
+
+.text-center { text-align: center; }
+
+.header { background-color: green; color: white; padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+
+.header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+
+.logo { max-height: 60px; }
+
+.nav-list { display: flex; gap: 15px; flex-wrap: wrap; align-items: center; }
+
+.nav-list li a, .nav-btn { color: white; font-weight: bold; padding: 10px 16px; background: transparent; border: 2px solid transparent; border-radius: 6px; transition: all 0.3s ease; }
+
+.nav-list li a:hover, .nav-list li a.active, .nav-btn:hover { background-color: darkgreen; }
+
+.hero { background: linear-gradient(135deg, lightgreen, white); padding: 80px 20px; }
+
+.hero h1 { font-size: 36px; color: green; margin-bottom: 15px; }
+
+.hero p { font-size: 18px; margin-bottom: 20px; }
+
+.btn { background-color: green; color: white; padding: 12px 25px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.3s ease; }
+
+.btn:hover { background-color: darkgreen; }
+
+.section { padding: 60px 20px; }
+
+.about h2 { font-size: 28px; color: green; margin-bottom: 10px; }
+
+.about p { max-width: 800px; margin: 0 auto 20px; font-size: 16px; }
+
+.countdown { background-color: honeydew; }
+
+.countdown-display { font-size: 24px; font-weight: bold; color: red; margin-top: 10px; }
+
+.testimonials { background-color: mintcream; }
+
+.slider { max-width: 600px; margin: auto; text-align: center; }
+
+.slide { display: none; font-size: 16px; font-style: italic; color: black; padding: 10px; }
+
+.slide.active { display: block; }
+
+.whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: limegreen; color: white; padding: 12px 20px; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 999; }
+
+.whatsapp-float:hover { background: forestgreen; }
+
+.popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 1000; }
+
+.popup-form { background: white; padding: 30px; border-radius: 10px; width: 90%; max-width: 500px; position: relative; text-align: center; }
+
+.popup-form h2 { color: green; margin-bottom: 20px; }
+
+.popup-form input, .popup-form select { width: 100%; padding: 12px; margin: 10px 0; font-size: 16px; border-radius: 6px; border: 1px solid lightgray; }
+
+.popup-form button { width: 100%; }
+
+.close-btn { position: absolute; top: 10px; right: 20px; font-size: 22px; font-weight: bold; color: gray; cursor: pointer; }
+
+.close-btn:hover { color: black; }
+
+.footer { background-color: black; color: white; text-align: center; padding: 20px; font-size: 14px; }
+
+.arabic-mode header { background-color: darkgreen; }
+
+.arabic-mode .btn.switch { background-color: darkgreen; }
+
+.arabic-mode { direction: rtl; text-align: right; }
+
+.english-mode { direction: ltr; text-align: left; }
+
+@media (max-width: 768px) { .header-content { flex-direction: column; gap: 15px; }
+
+.hero h1 { font-size: 28px; }
+
+.popup-form { padding: 20px; } }
+
+.course-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 50px 0; text-align: center; }
+
+.course-card { background-color: white; border-radius: 10px; padding: 25px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05); transition: transform 0.2s ease; }
+
+.course-card h3 { font-size: 22px; color: green; margin-bottom: 15px; }
+
+.course-card p { margin-bottom: 12px; }
+
+.course-card ul { padding-left: 20px; margin-bottom: 15px; }
+
+.course-card ul li { margin-bottom: 6px; font-size: 15px; }
+
+.course-card .btn { margin-top: 10px; }
+
+.search-wrapper { margin: 40px auto 10px; text-align: center; }
+
+.search-bar { width: 100%; max-width: 400px; padding: 12px 16px; font-size: 16px; border: 2px solid lightgray; border-radius: 8px; outline: none; transition: 0.3s ease; box-shadow: 0 4px 8px rgba(0,0,0,0.03); }
+
+.search-bar:focus { border-color: green; box-shadow: 0 4px 12px rgba(0,128,0,0.2); }
+
+.login-wrapper { min-height: 80vh; display: flex; justify-content: center; align-items: center; padding: 40px 20px; background-color: white; }
+
+.login-box { background: white; border-radius: 12px; padding: 40px 30px; max-width: 500px; width: 100%; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06); text-align: center; }
+
+.login-box h2 { font-size: 28px; color: green; margin-bottom: 20px; }
+
+.login-box p { margin-bottom: 25px; font-size: 15px; color: gray; }
+
+.login-box input { width: 100%; padding: 12px 14px; margin: 10px 0; border: 1px solid lightgray; border-radius: 6px; font-size: 16px; outline: none; transition: 0.3s; }
+
+.login-box input:focus { border-color: green; box-shadow: 0 0 5px rgba(0,128,0,0.2); }
+
+.login-box .btn { margin-top: 15px; width: 100%; }
+
+.login-box .whatsapp-link { display: inline-block; margin-top: 15px; color: green; font-weight: bold; text-decoration: underline; font-size: 14px; cursor: pointer; }
+
+.login-box .whatsapp-link:hover { color: darkgreen; }
+
+.register-wrapper { min-height: 85vh; display: flex; justify-content: center; align-items: center; padding: 50px 20px; background-color: white; }
+
+.register-box { background: white; border-radius: 12px; padding: 40px 30px; max-width: 550px; width: 100%; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06); text-align: center; }
+
+.register-box h2 { font-size: 28px; color: green; margin-bottom: 20px; }
+
+.register-box p { font-size: 15px; color: gray; margin-bottom: 25px; }
+
+.register-box input, .register-box select { width: 100%; padding: 12px 14px; margin: 10px 0; border: 1px solid lightgray; border-radius: 6px; font-size: 16px; outline: none; }
+
+.register-box input:focus, .register-box select:focus { border-color: green; box-shadow: 0 0 6px rgba(0,128,0,0.2); }
+
+.register-box .btn { width: 100%; margin-top: 15px; }
+
+@media (max-width: 600px) { .register-box { padding: 30px 20px; } }
+
+.contact-wrapper { min-height: 85vh; display: flex; justify-content: center; align-items: center; padding: 60px 20px; background-color: white; }
+
+.contact-box { background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); max-width: 600px; width: 100%; text-align: center; }
+
+.contact-box h2 { font-size: 28px; color: green; margin-bottom: 15px; }
+
+.contact-box p { font-size: 15px; color: gray; margin-bottom: 25px; }
+
+.contact-box form input, .contact-box form textarea { width: 100%; padding: 12px 14px; margin: 10px 0; font-size: 16px; border: 1px solid lightgray; border-radius: 6px; outline: none; }
+
+.contact-box form input:focus, .contact-box form textarea:focus { border-color: green; box-shadow: 0 0 6px rgba(0,128,0,0.2); }
+
+.contact-box .btn { width: 100%; margin-top: 15px; }
+
+.direct-whatsapp { margin-top: 30px; }
+
+.direct-whatsapp p { margin-bottom: 10px; color: gray; }
+
+@media (max-width: 600px) { .contact-box { padding: 30px 20px; } }
+
