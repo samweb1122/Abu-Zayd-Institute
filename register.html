@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Register – Abu Zayd Institute</title>
-  <script src="script.js"></script>
+  <title>Register | Abu Zayd Institute</title>
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body class="english-mode">
@@ -12,39 +11,35 @@
   <!-- HEADER -->
   <header class="header">
     <div class="container header-content">
-      <img src="./img/abuzayd.png" alt="Abu Zayd Logo" class="logo" />
+      <img src="./img/abuzayd.png" alt="Abu Zayd Logo" class="logo" style="max-width: 150px;" />
       <nav>
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="courses.html">Courses</a></li>
           <li><a href="register.html" class="active">Register</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero text-center">
-    <h1>Register Now</h1>
-    <p>Start your journey of Qur’an, Islamic Studies, and Personal Development today.</p>
-  </section>
+  <!-- REGISTRATION SECTION -->
+  <section class="register-wrapper">
+    <div class="register-box">
+      <h2>Register Now</h2>
+      <p>Start your journey of Qur’an, Islamic Studies, and Personal Development today.</p>
 
-  <!-- REGISTER FORM -->
-  <section class="section text-center">
-    <div class="container" style="max-width: 500px; margin: auto;">
-      <h2>Student Registration Form</h2>
-
-      <form action="https://wa.me/2349073528916" target="_blank">
-        <input type="text" placeholder="Your Full Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <input type="tel" placeholder="WhatsApp Number (e.g. 08123456789)" required />
-        <select required>
+      <form action="https://wa.me/2349073528916" method="GET" target="_blank">
+        <input type="text" name="name" placeholder="Your Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="WhatsApp Number (e.g. +2349030736603)" required />
+        <select name="course" required>
           <option value="">-- Select a Course --</option>
-          <option>Qur'an Memorization</option>
-          <option>Islamic Studies</option>
-          <option>Personal Development</option>
+          <option value="Qur'an Memorization">Qur'an Memorization</option>
+          <option value="Tajweed & Recitation">Tajweed & Recitation</option>
+          <option value="Islamic Studies">Islamic Studies</option>
+          <option value="Personal Development">Personal Development</option>
         </select>
         <button type="submit" class="btn">📲 Register via WhatsApp</button>
       </form>
