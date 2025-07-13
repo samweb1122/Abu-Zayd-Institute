@@ -1,1 +1,209 @@
-body { font-family: 'Segoe UI', sans-serif; background-color: #f9f9f9; color: #333; } h1 { color: #006b3c; text-align: center; padding: 20px; }
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* UTILITY */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* HEADER */
+.header {
+  background-color: #006b3c;
+  color: white;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  max-height: 60px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-list li a,
+.nav-btn {
+  color: white;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.nav-list li a:hover,
+.nav-btn:hover {
+  background-color: #004d2a;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #e6fff0, #ffffff);
+  padding: 60px 20px;
+}
+
+.hero h1,
+.hero h2 {
+  font-size: 32px;
+  color: #006b3c;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.btn {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #1e7e34;
+}
+
+/* SECTION */
+.section {
+  padding: 60px 20px;
+}
+
+/* FORM */
+form input,
+form select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* COURSE CARD */
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.course-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.course-card h3 {
+  color: #006b3c;
+  margin-bottom: 10px;
+}
+
+/* LOGIN */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 10px;
+  color: #006b3c;
+}
+
+/* FOOTER */
+.footer {
+  background: #222;
+  color: white;
+  padding: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+
+.whatsapp-float:hover {
+  background: #1ebd5f;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .course-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
