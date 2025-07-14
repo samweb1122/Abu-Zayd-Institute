@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Register | Abu Zayd Institute</title>
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="english-mode">
 
   <!-- HEADER -->
   <header class="header">
     <div class="container header-content">
-      <img src="./img/abuzayd.png" alt="Abu Zayd Logo" class="logo" style="max-width: 150px;" />
+      <img src="img/abuzayd.png" alt="Abu Zayd Logo" class="logo" style="max-width: 150px;" />
       <nav>
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
@@ -30,6 +30,7 @@
       <h2>Register Now</h2>
       <p>Start your journey of Qur’an, Islamic Studies, and Personal Development today.</p>
 
+      <!-- FORM 1: Quick WhatsApp Form -->
       <form action="https://wa.me/2349073528916" method="GET" target="_blank">
         <input type="text" name="name" placeholder="Your Full Name" required />
         <input type="email" name="email" placeholder="Email Address" required />
@@ -43,59 +44,59 @@
         </select>
         <button type="submit" class="btn">📲 Register via WhatsApp</button>
       </form>
+
+      <hr style="margin: 30px 0;">
+
+      <!-- FORM 2: Detailed Registration -->
+      <form action="/submit-form" method="POST">
+        <h3>Full Student Registration</h3>
+
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="number" name="age" placeholder="Age" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="WhatsApp Number" required />
+        <input type="text" name="school" placeholder="Current School" required />
+        
+        <label>School Closing Hour:</label>
+        <input type="time" name="closing_time" required />
+
+        <label>Free Days:</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="free_days[]" value="Monday"> Monday</label>
+          <label><input type="checkbox" name="free_days[]" value="Tuesday"> Tuesday</label>
+          <label><input type="checkbox" name="free_days[]" value="Wednesday"> Wednesday</label>
+          <label><input type="checkbox" name="free_days[]" value="Thursday"> Thursday</label>
+          <label><input type="checkbox" name="free_days[]" value="Friday"> Friday</label>
+          <label><input type="checkbox" name="free_days[]" value="Saturday"> Saturday</label>
+          <label><input type="checkbox" name="free_days[]" value="Sunday"> Sunday</label>
+        </div>
+
+        <label>Subjects Interested In:</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="subjects[]" value="Qur'an Memorization"> Qur'an Memorization</label>
+          <label><input type="checkbox" name="subjects[]" value="Tajweed & Recitation"> Tajweed & Recitation</label>
+          <label><input type="checkbox" name="subjects[]" value="Islamic Studies"> Islamic Studies</label>
+          <label><input type="checkbox" name="subjects[]" value="Personal Development"> Personal Development</label>
+        </div>
+
+        <label>Preferred Class Time:</label>
+        <select name="preferred_time" required>
+          <option value="">Select</option>
+          <option value="Morning (8am - 12pm)">Morning (8am - 12pm)</option>
+          <option value="Afternoon (1pm - 4pm)">Afternoon (1pm - 4pm)</option>
+          <option value="Evening (5pm - 8pm)">Evening (5pm - 8pm)</option>
+        </select>
+
+        <input type="text" name="guardian" placeholder="Parent/Guardian Name" />
+        <textarea name="comments" rows="4" placeholder="Additional Comments"></textarea>
+
+        <button type="submit" class="btn">📝 Submit Detailed Form</button>
+      </form>
     </div>
   </section>
 
   <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/2349073528916" class="whatsapp-float" target="_blank">💬 Chat Now</a>
-
-<form action="/submit-form" method="POST">
-  <h2>Student Registration Form</h2>
-
-  <label for="name">Full Name:</label>
-  <input type="text" id="name" name="name" required><br><br>
-
-  <label for="age">Age:</label>
-  <input type="number" id="age" name="age" required><br><br>
-
-  <label for="email">Email Address:</label>
-  <input type="email" id="email" name="email" required><br><br>
-
-  <label for="phone">WhatsApp Number:</label>
-  <input type="tel" id="phone" name="phone" required><br><br>
-
-  <label for="school">Current School:</label>
-  <input type="text" id="school" name="school" required><br><br>
-
-  <label for="closing_time">School Closing Hour:</label>
-  <input type="time" id="closing_time" name="closing_time" required><br><br>
-
-  <label>Free Days:</label><br>
-  <input type="checkbox" name="free_days" value="Monday"> Monday<br>
-  <input type="checkbox" name="free_days" value="Tuesday"> Tuesday<br>
-  <input type="checkbox" name="free_days" value="Wednesday"> Wednesday<br>
-  <input type="checkbox" name="free_days" value="Thursday"> Thursday<br>
-  <input type="checkbox" name="free_days" value="Friday"> Friday<br>
-  <input type="checkbox" name="free_days" value="Saturday"> Saturday<br>
-  <input type="checkbox" name="free_days" value="Sunday"> Sunday<br><br>
-
-  <label for="preferred_time">Preferred Time:</label>
-  <select id="preferred_time" name="preferred_time" required>
-    <option value="">Select</option>
-    <option value="Morning (8am - 12pm)">Morning (8am - 12pm)</option>
-    <option value="Afternoon (1pm - 4pm)">Afternoon (1pm - 4pm)</option>
-    <option value="Evening (5pm - 8pm)">Evening (5pm - 8pm)</option>
-  </select><br><br>
-
-  <label for="guardian">Parent/Guardian Name:</label>
-  <input type="text" id="guardian" name="guardian"><br><br>
-
-  <label for="comments">Additional Comments:</label><br>
-  <textarea id="comments" name="comments" rows="4" cols="40"></textarea><br><br>
-
-  <button type="submit">Register</button>
-</form>
-  
 
   <!-- FOOTER -->
   <footer class="footer text-center">
@@ -104,5 +105,6 @@
     </div>
   </footer>
 
+  <script src="js/main.js"></script>
 </body>
-      </html>
+</html>
