@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Register | Abu Zayd Institute</title>
   <link rel="stylesheet" href="style.css" />
-  <script script.js></script>
+  <script src="script.js"></script>
 </head>
 <body class="english-mode">
 
@@ -25,41 +25,48 @@
     </div>
   </header>
 
+  <!-- COUNTDOWN -->
+  <section class="countdown-section">
+    <div class="container">
+      <h3 id="countdown">Loading countdown...</h3>
+    </div>
+  </section>
+
   <!-- REGISTRATION SECTION -->
   <section class="register-wrapper">
     <div class="register-box">
-      <h2>Register Now</h2>
-      <p>Start your journey of Qur’an, Islamic Studies, and Personal Development today.</p>
+      <h2 id="welcome-text">Register Now</h2>
+      <p id="desc-text">Start your journey of Qur’an, Islamic Studies, and Personal Development today.</p>
 
       <!-- FORM 1: Quick WhatsApp Form -->
-      <form action="https://wa.me/2349073528916" method="GET" target="_blank">
-        <input type="text" name="name" placeholder="Your Full Name" required />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <input type="tel" name="phone" placeholder="WhatsApp Number (e.g. +2349030736603)" required />
-        <select name="course" required>
+      <form id="registerForm">
+        <input type="text" id="name" name="name" placeholder="Your Full Name" required />
+        <input type="email" id="email" name="email" placeholder="Email Address" required />
+        <input type="tel" id="phone" name="phone" placeholder="WhatsApp Number (e.g. +2349030736603)" required />
+        <select id="course" name="course" required>
           <option value="">-- Select a Course --</option>
           <option value="Qur'an Memorization">Qur'an Memorization</option>
           <option value="Tajweed & Recitation">Tajweed & Recitation</option>
           <option value="Islamic Studies">Islamic Studies</option>
           <option value="Personal Development">Personal Development</option>
         </select>
-        <button type="submit" class="btn">📲 Register via WhatsApp</button>
+        <button type="submit">📲 Register via WhatsApp</button>
       </form>
 
-      <hr style="margin: 30px 0;">
+      <hr />
 
       <!-- FORM 2: Detailed Registration -->
-      <form action="/submit-form" method="POST">
+      <form id="detailedRegisterForm">
         <h3>Full Student Registration</h3>
 
-        <input type="text" name="name" placeholder="Full Name" required />
-        <input type="number" name="age" placeholder="Age" required />
-        <input type="email" name="email" placeholder="Email Address" required />
-        <input type="tel" name="phone" placeholder="WhatsApp Number" required />
-        <input type="text" name="school" placeholder="Current School" required />
-        
-        <label>School Closing Hour:</label>
-        <input type="time" name="closing_time" required />
+        <input type="text" id="fullName" name="name" placeholder="Full Name" required />
+        <input type="number" id="age" name="age" placeholder="Age" required />
+        <input type="email" id="email2" name="email" placeholder="Email Address" required />
+        <input type="tel" id="phone2" name="phone" placeholder="WhatsApp Number" required />
+        <input type="text" id="school" name="school" placeholder="Current School" required />
+
+        <label for="closing_time">School Closing Hour:</label>
+        <input type="time" id="closing_time" name="closing_time" required />
 
         <label>Free Days:</label>
         <div class="checkbox-group">
@@ -80,18 +87,18 @@
           <label><input type="checkbox" name="subjects[]" value="Personal Development"> Personal Development</label>
         </div>
 
-        <label>Preferred Class Time:</label>
-        <select name="preferred_time" required>
+        <label for="preferred_time">Preferred Class Time:</label>
+        <select id="preferred_time" name="preferred_time" required>
           <option value="">Select</option>
           <option value="Morning (8am - 12pm)">Morning (8am - 12pm)</option>
           <option value="Afternoon (1pm - 4pm)">Afternoon (1pm - 4pm)</option>
           <option value="Evening (5pm - 8pm)">Evening (5pm - 8pm)</option>
         </select>
 
-        <input type="text" name="guardian" placeholder="Parent/Guardian Name" />
-        <textarea name="comments" rows="4" placeholder="Additional Comments"></textarea>
+        <input type="text" id="guardian" name="guardian" placeholder="Parent/Guardian Name" />
+        <textarea id="comments" name="comments" rows="4" placeholder="Additional Comments"></textarea>
 
-        <button type="submit" class="btn">📝 Submit Detailed Form</button>
+        <button type="submit">📝 Submit Detailed Form</button>
       </form>
     </div>
   </section>
@@ -106,4 +113,4 @@
     </div>
   </footer>
 </body>
-</html>
+          </html>
