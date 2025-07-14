@@ -110,3 +110,27 @@ function switchLanguage() {
     body.classList.remove("arabic-mode");
   }
 }
+
+
+        document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = {
+    name: document.getElementById("name").value,
+    age: document.getElementById("age").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    school: document.getElementById("school").value,
+    closing_time: document.getElementById("closing_time").value,
+    free_days: Array.from(document.querySelectorAll("input[name='free_days']:checked")).map(el => el.value),
+    preferred_time: document.getElementById("preferred_time").value,
+    guardian: document.getElementById("guardian").value,
+    comments: document.getElementById("comments").value
+  };
+
+  console.log("Submitted Data:", formData);
+
+  alert("Registration submitted successfully!");
+
+  this.reset(); // Clear form after submission
+});
