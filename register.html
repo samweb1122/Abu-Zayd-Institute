@@ -49,6 +49,54 @@
   <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/2349073528916" class="whatsapp-float" target="_blank">💬 Chat Now</a>
 
+<form action="/submit-form" method="POST">
+  <h2>Student Registration Form</h2>
+
+  <label for="name">Full Name:</label>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="age">Age:</label>
+  <input type="number" id="age" name="age" required><br><br>
+
+  <label for="email">Email Address:</label>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <label for="phone">WhatsApp Number:</label>
+  <input type="tel" id="phone" name="phone" required><br><br>
+
+  <label for="school">Current School:</label>
+  <input type="text" id="school" name="school" required><br><br>
+
+  <label for="closing_time">School Closing Hour:</label>
+  <input type="time" id="closing_time" name="closing_time" required><br><br>
+
+  <label>Free Days:</label><br>
+  <input type="checkbox" name="free_days" value="Monday"> Monday<br>
+  <input type="checkbox" name="free_days" value="Tuesday"> Tuesday<br>
+  <input type="checkbox" name="free_days" value="Wednesday"> Wednesday<br>
+  <input type="checkbox" name="free_days" value="Thursday"> Thursday<br>
+  <input type="checkbox" name="free_days" value="Friday"> Friday<br>
+  <input type="checkbox" name="free_days" value="Saturday"> Saturday<br>
+  <input type="checkbox" name="free_days" value="Sunday"> Sunday<br><br>
+
+  <label for="preferred_time">Preferred Time:</label>
+  <select id="preferred_time" name="preferred_time" required>
+    <option value="">Select</option>
+    <option value="Morning (8am - 12pm)">Morning (8am - 12pm)</option>
+    <option value="Afternoon (1pm - 4pm)">Afternoon (1pm - 4pm)</option>
+    <option value="Evening (5pm - 8pm)">Evening (5pm - 8pm)</option>
+  </select><br><br>
+
+  <label for="guardian">Parent/Guardian Name:</label>
+  <input type="text" id="guardian" name="guardian"><br><br>
+
+  <label for="comments">Additional Comments:</label><br>
+  <textarea id="comments" name="comments" rows="4" cols="40"></textarea><br><br>
+
+  <button type="submit">Register</button>
+</form>
+  
+
   <!-- FOOTER -->
   <footer class="footer text-center">
     <div class="container">
