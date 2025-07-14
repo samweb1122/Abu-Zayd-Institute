@@ -134,3 +134,34 @@ function switchLanguage() {
 
   this.reset(); // Clear form after submission
 });
+
+
+          document.addEventListener("DOMContentLoaded", function () {
+  const detailedForm = document.getElementById("detailedRegisterForm");
+
+  if (detailedForm) {
+    detailedForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = {
+        name: document.getElementById("name").value,
+        age: document.getElementById("age").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        school: document.getElementById("school").value,
+        closing_time: document.getElementById("closing_time").value,
+        free_days: Array.from(document.querySelectorAll("input[name='free_days']:checked")).map(el => el.value),
+        preferred_time: document.getElementById("preferred_time").value,
+        guardian: document.getElementById("guardian").value,
+        comments: document.getElementById("comments").value
+      };
+
+      console.log("Submitted Data:", formData);
+
+      // Optional: You can also send this data to WhatsApp/Google Sheets/API here.
+
+      alert("Registration submitted successfully!");
+      this.reset(); // Clear the form
+    });
+  }
+});
