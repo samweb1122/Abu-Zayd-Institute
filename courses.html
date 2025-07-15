@@ -94,18 +94,6 @@
   </footer>
 
   <!-- COURSE SEARCH FUNCTION -->
-  <script>
-    const searchInput = document.getElementById("searchInput");
-    const courseCards = document.querySelectorAll(".course-card");
-
-    searchInput.addEventListener("input", () => {
-      const searchTerm = searchInput.value.toLowerCase();
-      courseCards.forEach(card => {
-        const title = card.getAttribute("data-title").toLowerCase();
-        card.style.display = title.includes(searchTerm) ? "block" : "none";
-      });
-    });
-  </script>
-
+  
 </body>
   </html>
