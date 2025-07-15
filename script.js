@@ -136,3 +136,47 @@ function switchLanguage() {
     body.classList.remove("arabic-mode");
   }
 }
+// First form
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const course = document.getElementById("course").value;
+  const phone = document.getElementById("phone").value;
+
+  const message = `Assalamu Alaikum! My name is ${name}. I'm interested in the ${course} course. My WhatsApp number is ${phone}.`;
+  window.open(`https://wa.me/2349073528916?text=${encodeURIComponent(message)}`, '_blank');
+});
+
+// Second (detailed) form
+document.getElementById('detailedRegisterForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const fullName = document.getElementById('fullName').value;
+  const age = document.getElementById('age').value;
+  const email = document.getElementById('email2').value;
+  const phone = document.getElementById('phone2').value;
+  const school = document.getElementById('school').value;
+  const closingTime = document.getElementById('closing_time').value;
+  const guardian = document.getElementById('guardian').value;
+  const comments = document.getElementById('comments').value;
+  const preferredTime = document.getElementById('preferred_time').value;
+
+  // Get multiple selections
+  const freeDays = Array.from(document.querySelectorAll('input[name="free_days[]"]:checked')).map(cb => cb.value).join(', ');
+  const subjects = Array.from(document.querySelectorAll('input[name="subjects[]"]:checked')).map(cb => cb.value).join(', ');
+
+  const message = `📝 Full Student Registration:\n
+Name: ${fullName}
+Age: ${age}
+Email: ${email}
+Phone: ${phone}
+School: ${school}
+School Closing Time: ${closingTime}
+Free Days: ${freeDays}
+Subjects Interested In: ${subjects}
+Preferred Class Time: ${preferredTime}
+Parent/Guardian: ${guardian}
+Additional Comments: ${comments}`;
+
+  window.open(`https://wa.me/2349073528916?text=${encodeURIComponent(message)}`, '_blank');
+});
