@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abu Zayd Institute</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body class="english-mode">
   <!-- HEADER -->
@@ -16,9 +16,8 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="courses.html">Courses</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="register.html" class="btn nav-btn">Register</a></li>
           <li><button class="btn nav-btn" onclick="openLoginForm()">Login</button></li>
-          <li><button class="btn nav-btn" onclick="toggleRegister()">Register</button></li>
         </ul>
       </nav>
     </div>
@@ -67,29 +66,6 @@
   <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/2349073528916" class="whatsapp-float" target="_blank">💬 Chat with Us</a>
 
-  <!-- REGISTER POPUP FORM -->
-  <div id="registerPopup" class="popup-overlay">
-    <div class="popup-form">
-      <span class="close-btn" onclick="toggleRegister()">&times;</span>
-      <h2>Register Now</h2>
-      <form action="https://formsubmit.co/el/weluvu" method="POST">
-        <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="text" name="Full Name" placeholder="Full Name" required />
-        <input type="email" name="Email" placeholder="Email Address" required />
-        <input type="tel" name="WhatsApp Number" placeholder="WhatsApp Number" required />
-        <select name="Course" required>
-          <option value="">-- Select Course --</option>
-          <option value="Qur'an Memorization">Qur'an Memorization</option>
-          <option value="Tajweed & Recitation">Tajweed & Recitation</option>
-          <option value="Islamic Studies">Islamic Studies</option>
-          <option value="Arabic Language">Arabic Language</option>
-        </select>
-        <button type="submit" class="btn">📩 Submit</button>
-      </form>
-    </div>
-  </div>
-
   <!-- FOOTER -->
   <footer class="footer text-center">
     <div class="container">
@@ -97,4 +73,4 @@
     </div>
   </footer>
 </body>
- </html>
+</html>
