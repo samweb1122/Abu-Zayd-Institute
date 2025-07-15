@@ -1,3 +1,4 @@
+
 // ============ ON LOAD ============
 window.onload = function () {
   initCountdown();
@@ -178,4 +179,17 @@ Comments: ${comments}`;
       const url = `https://wa.me/2349073528916?text=${encodeURIComponent(message)}`;
       setTimeout(() => window.open(url, "_blank"), 1000); // Open WhatsApp after form submits
     };
+
+
+    const searchInput = document.getElementById("searchInput");
+    const courseCards = document.querySelectorAll(".course-card");
+
+    searchInput.addEventListener("input", () => {
+      const searchTerm = searchInput.value.toLowerCase();
+      courseCards.forEach(card => {
+        const title = card.getAttribute("data-title").toLowerCase();
+        card.style.display = title.includes(searchTerm) ? "block" : "none";
+      });
+    });
+
   
