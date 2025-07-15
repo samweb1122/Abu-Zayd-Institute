@@ -44,74 +44,6 @@ function initSlider() {
   }
 }
 
-// ============ REGISTER FORM TO WHATSAPP ============
-document.addEventListener("DOMContentLoaded", function () {
-  const whatsappForm = document.getElementById("registerForm");
-  const popup = document.getElementById("registerPopup");
-
-  if (whatsappForm) {
-    whatsappForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const course = document.getElementById("course").value;
-
-      if (!name || !email || !phone || !course) {
-        alert("Please fill in all fields.");
-        return;
-      }
-
-      const message = `*New Registration*\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCourse: ${course}`;
-      const whatsappLink = `https://wa.me/2349073528916?text=${encodeURIComponent(message)}`;
-
-      window.open(whatsappLink, "_blank");
-      whatsappForm.reset();
-      if (popup) popup.style.display = "none";
-    });
-  }
-
-  // ============ DETAILED REGISTRATION FORM ============
-  const detailedForm = document.getElementById("detailedRegisterForm");
-
-  if (detailedForm) {
-    detailedForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const formData = {
-        name: document.getElementById("fullName").value,
-        age: document.getElementById("age").value,
-        email: document.getElementById("email2").value,
-        phone: document.getElementById("phone2").value,
-        school: document.getElementById("school").value,
-        closing_time: document.getElementById("closing_time").value,
-        free_days: Array.from(document.querySelectorAll("input[name='free_days[]']:checked")).map(el => el.value),
-        preferred_time: document.getElementById("preferred_time").value,
-        guardian: document.getElementById("guardian").value,
-        comments: document.getElementById("comments").value
-      };
-
-      console.log("Submitted Data:", formData);
-      alert("Registration submitted successfully!");
-      this.reset();
-    });
-  }
-});
-
-// ============ REGISTER TOGGLE ============
-function toggleRegister() {
-  const popup = document.getElementById("registerPopup");
-  if (popup) {
-    popup.style.display = popup.style.display === "flex" ? "none" : "flex";
-  }
-}
-
-// ============ LOGIN PLACEHOLDER ============
-function openLoginForm() {
-  alert("Login form coming soon...");
-}
-
 // ============ LANGUAGE SWITCH ============
 let isArabic = false;
 
@@ -136,47 +68,86 @@ function switchLanguage() {
     body.classList.remove("arabic-mode");
   }
 }
-// First form
-document.getElementById('registerForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const name = document.getElementById("name").value;
-  const course = document.getElementById("course").value;
-  const phone = document.getElementById("phone").value;
 
-  const message = `Assalamu Alaikum! My name is ${name}. I'm interested in the ${course} course. My WhatsApp number is ${phone}.`;
-  window.open(`https://wa.me/2349073528916?text=${encodeURIComponent(message)}`, '_blank');
-});
+// ============ REGISTER TOGGLE ============
+function toggleRegister() {
+  const popup = document.getElementById("registerPopup");
+  if (popup) {
+    popup.style.display = popup.style.display === "flex" ? "none" : "flex";
+  }
+}
 
-// Second (detailed) form
-document.getElementById('detailedRegisterForm').addEventListener('submit', function(e) {
-  e.preventDefault();
+// ============ LOGIN PLACEHOLDER ============
+function openLoginForm() {
+  alert("Login form coming soon...");
+}
 
-  const fullName = document.getElementById('fullName').value;
-  const age = document.getElementById('age').value;
-  const email = document.getElementById('email2').value;
-  const phone = document.getElementById('phone2').value;
-  const school = document.getElementById('school').value;
-  const closingTime = document.getElementById('closing_time').value;
-  const guardian = document.getElementById('guardian').value;
-  const comments = document.getElementById('comments').value;
-  const preferredTime = document.getElementById('preferred_time').value;
+// ============ QUICK FORM TO WHATSAPP ============
+document.addEventListener("DOMContentLoaded", function () {
+  const quickForm = document.getElementById("registerForm");
+  if (quickForm) {
+    quickForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const course = document.getElementById("course").value;
 
-  // Get multiple selections
-  const freeDays = Array.from(document.querySelectorAll('input[name="free_days[]"]:checked')).map(cb => cb.value).join(', ');
-  const subjects = Array.from(document.querySelectorAll('input[name="subjects[]"]:checked')).map(cb => cb.value).join(', ');
+      if (!name || !email || !phone || !course) {
+        alert("Please fill in all fields.");
+        return;
+      }
 
-  const message = `📝 Full Student Registration:\n
+      const message = `*New Registration*\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nCourse: ${course}`;
+      const whatsappLink = `https://wa.me/2349073528916?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappLink, "_blank");
+      quickForm.reset();
+    });
+  }
+
+  // ============ DETAILED FORM TO WHATSAPP + GMAIL ============
+  const detailedForm = document.getElementById("detailedRegisterForm");
+  if (detailedForm) {
+    detailedForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // prevent actual form submit until WhatsApp opens
+
+      const fullName = document.getElementById("fullName").value;
+      const age = document.getElementById("age").value;
+      const email = document.getElementById("email2").value;
+      const phone = document.getElementById("phone2").value;
+      const school = document.getElementById("school").value;
+      const closingTime = document.getElementById("closing_time").value;
+      const guardian = document.getElementById("guardian").value;
+      const comments = document.getElementById("comments").value;
+      const preferredTime = document.getElementById("preferred_time").value;
+
+      const freeDays = Array.from(document.querySelectorAll("input[name='free_days[]']:checked"))
+        .map(cb => cb.value).join(', ');
+      const subjects = Array.from(document.querySelectorAll("input[name='subjects[]']:checked"))
+        .map(cb => cb.value).join(', ');
+
+      const message = `📝 Full Student Registration:\n
 Name: ${fullName}
 Age: ${age}
 Email: ${email}
 Phone: ${phone}
 School: ${school}
-School Closing Time: ${closingTime}
+Closing Time: ${closingTime}
 Free Days: ${freeDays}
-Subjects Interested In: ${subjects}
-Preferred Class Time: ${preferredTime}
+Subjects: ${subjects}
+Preferred Time: ${preferredTime}
 Parent/Guardian: ${guardian}
-Additional Comments: ${comments}`;
+Comments: ${comments}`;
 
-  window.open(`https://wa.me/2349073528916?text=${encodeURIComponent(message)}`, '_blank');
+      // Send to WhatsApp
+      const whatsappLink = `https://wa.me/2349073528916?text=${encodeURIComponent(message)}`;
+      window.open(whatsappLink, "_blank");
+
+      // Submit the form to FormSubmit (Gmail)
+      setTimeout(() => {
+        detailedForm.submit(); // submit after WhatsApp opens
+      }, 500);
+    });
+  }
 });
