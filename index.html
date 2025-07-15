@@ -1,10 +1,11 @@
- <!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abu Zayd Institute</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body class="english-mode">
   <!-- HEADER -->
@@ -22,13 +23,19 @@
         </ul>
       </nav>
     </div>
-  </header>  <!-- HERO SECTION -->  <section class="hero">
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
     <div class="container text-center">
-      <h1 id="welcome-text">Welcome to Abu Zayd Institute</h1>
-      <p id="desc-text">Learn Qur'an, Islamic Studies, and Personal Development — Anywhere, Anytime.</p>
+      <h1>Welcome to Abu Zayd Institute</h1>
+      <p>Learn Qur'an, Islamic Studies, and Personal Development — Anywhere, Anytime.</p>
       <button class="btn switch" onclick="switchLanguage()">Switch Language</button>
     </div>
-  </section>  <!-- ABOUT PREVIEW -->  <section class="section about">
+  </section>
+
+  <!-- ABOUT PREVIEW -->
+  <section class="section about">
     <div class="container text-center">
       <h2>Why Choose Us?</h2>
       <p>
@@ -36,12 +43,18 @@
       </p>
       <a href="about.html" class="btn">Learn More</a>
     </div>
-  </section>  <!-- COUNTDOWN -->  <section class="section countdown">
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="section countdown">
     <div class="container text-center">
       <h2>Enrollment Closes In:</h2>
       <div id="countdown" class="countdown-display">Loading countdown...</div>
     </div>
-  </section>  <!-- TESTIMONIALS -->  <section class="section testimonials">
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials">
     <div class="container">
       <h2 class="text-center">What Students Say</h2>
       <div class="slider">
@@ -50,30 +63,39 @@
         <div class="slide">"Learning online was convenient, but also very impactful. May Allāh bless this work."</div>
       </div>
     </div>
-  </section>  <!-- WHATSAPP FLOAT --><a href="https://wa.me/2349073528916" class="whatsapp-float" target="_blank">💬 Chat with Us</a>
+  </section>
 
-  <!-- REGISTER POPUP -->  <div id="registerPopup" class="popup-overlay">
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/2349073528916" class="whatsapp-float" target="_blank">💬 Chat with Us</a>
+
+  <!-- REGISTER POPUP FORM -->
+  <div id="registerPopup" class="popup-overlay">
     <div class="popup-form">
       <span class="close-btn" onclick="toggleRegister()">&times;</span>
       <h2>Register Now</h2>
-      <form id="registerForm">
-        <input type="text" id="name" placeholder="Full Name" required />
-        <input type="email" id="email" placeholder="Email Address" required />
-        <input type="tel" id="phone" placeholder="WhatsApp Number" required />
-        <select id="course" required>
+      <form action="https://formsubmit.co/el/weluvu" method="POST">
+        <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="Full Name" placeholder="Full Name" required />
+        <input type="email" name="Email" placeholder="Email Address" required />
+        <input type="tel" name="WhatsApp Number" placeholder="WhatsApp Number" required />
+        <select name="Course" required>
           <option value="">-- Select Course --</option>
-          <option>Qur'an Memorization</option>
-          <option>Tajweed & Recitation</option>
-          <option>Islamic Studies</option>
-          <option>Arabic Language</option>
+          <option value="Qur'an Memorization">Qur'an Memorization</option>
+          <option value="Tajweed & Recitation">Tajweed & Recitation</option>
+          <option value="Islamic Studies">Islamic Studies</option>
+          <option value="Arabic Language">Arabic Language</option>
         </select>
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn">📩 Submit</button>
       </form>
     </div>
-  </div>  <!-- FOOTER -->  <footer class="footer text-center">
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer text-center">
     <div class="container">
       <p>&copy; 2025 Abu Zayd Institute. All rights reserved.</p>
     </div>
   </footer>
 </body>
-  </html>
+ </html>
