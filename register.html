@@ -69,33 +69,34 @@
         <label for="closing_time">School Closing Hour:</label>
         <input type="time" name="Closing Time" id="closing_time" required />
 
-        <label>Free Days:</label>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="Free Days" value="Monday"> Monday</label>
-          <label><input type="checkbox" name="Free Days" value="Tuesday"> Tuesday</label>
-          <label><input type="checkbox" name="Free Days" value="Wednesday"> Wednesday</label>
-          <label><input type="checkbox" name="Free Days" value="Thursday"> Thursday</label>
-          <label><input type="checkbox" name="Free Days" value="Friday"> Friday</label>
-          <label><input type="checkbox" name="Free Days" value="Saturday"> Saturday</label>
-          <label><input type="checkbox" name="Free Days" value="Sunday"> Sunday</label>
-        </div>
+        <!-- FREE DAYS TOGGLE -->
+<label for="freeDaysToggle" style="cursor:pointer; font-weight:bold;" onclick="toggleSection('freeDaysBox')">
+  📅 Select Free Days
+</label>
+<div id="freeDaysBox" class="hidden-section">
+  <div class="checkbox-group">
+    <label><input type="checkbox" name="Free_Days[]" value="Monday"> Monday</label>
+    <label><input type="checkbox" name="Free_Days[]" value="Tuesday"> Tuesday</label>
+    <label><input type="checkbox" name="Free_Days[]" value="Wednesday"> Wednesday</label>
+    <label><input type="checkbox" name="Free_Days[]" value="Thursday"> Thursday</label>
+    <label><input type="checkbox" name="Free_Days[]" value="Friday"> Friday</label>
+    <label><input type="checkbox" name="Free_Days[]" value="Saturday"> Saturday</label>
+    <label><input type="checkbox" name="Free_Days[]" value="Sunday"> Sunday</label>
+  </div>
+</div>
 
-        <label>Subjects Interested In:</label>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="Subjects" value="Qur'an Memorization"> Qur'an Memorization</label>
-          <label><input type="checkbox" name="Subjects" value="Tajweed & Recitation"> Tajweed & Recitation</label>
-          <label><input type="checkbox" name="Subjects" value="Islamic Studies"> Islamic Studies</label>
-          <label><input type="checkbox" name="Subjects" value="Personal Development"> Personal Development</label>
-        </div>
-
-        <label for="preferred_time">Preferred Class Time:</label>
-        <select id="preferred_time" name="Preferred Time" required>
-          <option value="">Select</option>
-          <option value="Morning (8am - 12pm)">Morning (8am - 12pm)</option>
-          <option value="Afternoon (1pm - 4pm)">Afternoon (1pm - 4pm)</option>
-          <option value="Evening (5pm - 8pm)">Evening (5pm - 8pm)</option>
-        </select>
-
+<!-- SUBJECTS TOGGLE -->
+<label for="subjectsToggle" style="cursor:pointer; font-weight:bold;" onclick="toggleSection('subjectsBox')">
+  📚 Select Subjects of Interest
+</label>
+<div id="subjectsBox" class="hidden-section">
+  <div class="checkbox-group">
+    <label><input type="checkbox" name="Subjects[]" value="Qur'an Memorization"> Qur'an Memorization</label>
+    <label><input type="checkbox" name="Subjects[]" value="Tajweed & Recitation"> Tajweed & Recitation</label>
+    <label><input type="checkbox" name="Subjects[]" value="Islamic Studies"> Islamic Studies</label>
+    <label><input type="checkbox" name="Subjects[]" value="Personal Development"> Personal Development</label>
+  </div>
+</div>
         <input type="text" name="Guardian Name" id="guardian" placeholder="Parent/Guardian Name" />
         <textarea name="Comments" id="comments" rows="4" placeholder="Additional Comments"></textarea>
 
