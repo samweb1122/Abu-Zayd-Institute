@@ -151,3 +151,31 @@ Comments: ${comments}`;
     });
   }
 });
+
+
+    function submitQuickForm(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const course = document.getElementById("course").value;
+
+      const message = `Assalamu Alaikum, my name is ${name}. I want to register for *${course}*.\nEmail: ${email}\nWhatsApp: ${phone}`;
+      const url = `https://wa.me/2349073528916?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+
+    function submitDetailedForm(event) {
+      const fullName = document.getElementById("fullName").value;
+      const age = document.getElementById("age").value;
+      const email = document.getElementById("email2").value;
+      const phone = document.getElementById("phone2").value;
+      const school = document.getElementById("school").value;
+      const time = document.getElementById("closing_time").value;
+      const preferred = document.getElementById("preferred_time").value;
+
+      const message = `New Student Registration:\nName: ${fullName}\nAge: ${age}\nEmail: ${email}\nPhone: ${phone}\nSchool: ${school}\nClosing Time: ${time}\nPreferred Time: ${preferred}`;
+      const url = `https://wa.me/2349073528916?text=${encodeURIComponent(message)}`;
+      setTimeout(() => window.open(url, "_blank"), 1000); // Open WhatsApp after form submits
+    };
+  
