@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Register | Abu Zayd Institute</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
+  <script defer src="script.js"></script>
 </head>
 <body class="english-mode">
 
@@ -34,16 +34,21 @@
 
   <!-- REGISTRATION SECTION -->
   <section class="register-wrapper">
+    <!-- Logo Before Registration Box -->
+    <div class="logo" style="text-align: center; margin-bottom: 20px;">
+      <img src="img/abuzayd.png" alt="Abu Zayd Logo" style="max-width: 150px;" />
+    </div>
+
     <div class="register-box">
       <h2 id="welcome-text">Register Now</h2>
       <p id="desc-text">Start your journey of Qur’an, Islamic Studies, and Personal Development today.</p>
 
       <!-- FORM 1: Quick WhatsApp Form -->
-      <form id="registerForm">
-        <input type="text" id="name" name="name" placeholder="Your Full Name" required />
-        <input type="email" id="email" name="email" placeholder="Email Address" required />
-        <input type="tel" id="phone" name="phone" placeholder="WhatsApp Number (e.g. +2349030736603)" required />
-        <select id="course" name="course" required>
+      <form id="registerForm" onsubmit="submitQuickForm(event)">
+        <input type="text" id="name" placeholder="Your Full Name" required />
+        <input type="email" id="email" placeholder="Email Address" required />
+        <input type="tel" id="phone" placeholder="WhatsApp Number" required />
+        <select id="course" required>
           <option value="">-- Select a Course --</option>
           <option value="Qur'an Memorization">Qur'an Memorization</option>
           <option value="Tajweed & Recitation">Tajweed & Recitation</option>
@@ -56,48 +61,49 @@
       <hr />
 
       <!-- FORM 2: Detailed Registration -->
-      <form id="detailedRegisterForm">
+      <form id="detailedRegisterForm" action="https://formsubmit.co/your-email@example.com" method="POST" onsubmit="submitDetailedForm(event)">
         <h3>Full Student Registration</h3>
 
-        <input type="text" id="fullName" name="name" placeholder="Full Name" required />
-        <input type="number" id="age" name="age" placeholder="Age" required />
-        <input type="email" id="email2" name="email" placeholder="Email Address" required />
-        <input type="tel" id="phone2" name="phone" placeholder="WhatsApp Number" required />
-        <input type="text" id="school" name="school" placeholder="Current School" required />
+        <input type="text" name="Full Name" id="fullName" placeholder="Full Name" required />
+        <input type="number" name="Age" id="age" placeholder="Age" required />
+        <input type="email" name="Email" id="email2" placeholder="Email Address" required />
+        <input type="tel" name="Phone" id="phone2" placeholder="WhatsApp Number" required />
+        <input type="text" name="School" id="school" placeholder="Current School" required />
 
         <label for="closing_time">School Closing Hour:</label>
-        <input type="time" id="closing_time" name="closing_time" required />
+        <input type="time" name="Closing Time" id="closing_time" required />
 
         <label>Free Days:</label>
         <div class="checkbox-group">
-          <label><input type="checkbox" name="free_days[]" value="Monday"> Monday</label>
-          <label><input type="checkbox" name="free_days[]" value="Tuesday"> Tuesday</label>
-          <label><input type="checkbox" name="free_days[]" value="Wednesday"> Wednesday</label>
-          <label><input type="checkbox" name="free_days[]" value="Thursday"> Thursday</label>
-          <label><input type="checkbox" name="free_days[]" value="Friday"> Friday</label>
-          <label><input type="checkbox" name="free_days[]" value="Saturday"> Saturday</label>
-          <label><input type="checkbox" name="free_days[]" value="Sunday"> Sunday</label>
+          <label><input type="checkbox" name="Free Days" value="Monday"> Monday</label>
+          <label><input type="checkbox" name="Free Days" value="Tuesday"> Tuesday</label>
+          <label><input type="checkbox" name="Free Days" value="Wednesday"> Wednesday</label>
+          <label><input type="checkbox" name="Free Days" value="Thursday"> Thursday</label>
+          <label><input type="checkbox" name="Free Days" value="Friday"> Friday</label>
+          <label><input type="checkbox" name="Free Days" value="Saturday"> Saturday</label>
+          <label><input type="checkbox" name="Free Days" value="Sunday"> Sunday</label>
         </div>
 
         <label>Subjects Interested In:</label>
         <div class="checkbox-group">
-          <label><input type="checkbox" name="subjects[]" value="Qur'an Memorization"> Qur'an Memorization</label>
-          <label><input type="checkbox" name="subjects[]" value="Tajweed & Recitation"> Tajweed & Recitation</label>
-          <label><input type="checkbox" name="subjects[]" value="Islamic Studies"> Islamic Studies</label>
-          <label><input type="checkbox" name="subjects[]" value="Personal Development"> Personal Development</label>
+          <label><input type="checkbox" name="Subjects" value="Qur'an Memorization"> Qur'an Memorization</label>
+          <label><input type="checkbox" name="Subjects" value="Tajweed & Recitation"> Tajweed & Recitation</label>
+          <label><input type="checkbox" name="Subjects" value="Islamic Studies"> Islamic Studies</label>
+          <label><input type="checkbox" name="Subjects" value="Personal Development"> Personal Development</label>
         </div>
 
         <label for="preferred_time">Preferred Class Time:</label>
-        <select id="preferred_time" name="preferred_time" required>
+        <select id="preferred_time" name="Preferred Time" required>
           <option value="">Select</option>
           <option value="Morning (8am - 12pm)">Morning (8am - 12pm)</option>
           <option value="Afternoon (1pm - 4pm)">Afternoon (1pm - 4pm)</option>
           <option value="Evening (5pm - 8pm)">Evening (5pm - 8pm)</option>
         </select>
 
-        <input type="text" id="guardian" name="guardian" placeholder="Parent/Guardian Name" />
-        <textarea id="comments" name="comments" rows="4" placeholder="Additional Comments"></textarea>
+        <input type="text" name="Guardian Name" id="guardian" placeholder="Parent/Guardian Name" />
+        <textarea name="Comments" id="comments" rows="4" placeholder="Additional Comments"></textarea>
 
+        <input type="hidden" name="_captcha" value="false" />
         <button type="submit">📝 Submit Detailed Form</button>
       </form>
     </div>
@@ -112,5 +118,33 @@
       <p>&copy; 2025 Abu Zayd Institute. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    function submitQuickForm(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const course = document.getElementById("course").value;
+
+      const message = `Assalamu Alaikum, my name is ${name}. I want to register for *${course}*.\nEmail: ${email}\nWhatsApp: ${phone}`;
+      const url = `https://wa.me/2349073528916?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+
+    function submitDetailedForm(event) {
+      const fullName = document.getElementById("fullName").value;
+      const age = document.getElementById("age").value;
+      const email = document.getElementById("email2").value;
+      const phone = document.getElementById("phone2").value;
+      const school = document.getElementById("school").value;
+      const time = document.getElementById("closing_time").value;
+      const preferred = document.getElementById("preferred_time").value;
+
+      const message = `New Student Registration:\nName: ${fullName}\nAge: ${age}\nEmail: ${email}\nPhone: ${phone}\nSchool: ${school}\nClosing Time: ${time}\nPreferred Time: ${preferred}`;
+      const url = `https://wa.me/2349073528916?text=${encodeURIComponent(message)}`;
+      setTimeout(() => window.open(url, "_blank"), 1000); // Open WhatsApp after form submits
+    }
+  </script>
 </body>
-          </html>
+            </html>
