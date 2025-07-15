@@ -293,3 +293,7 @@ textarea {
     padding: 30px 20px;
   }
 }
+.hidden-section {
+  display: none;
+  margin-top: 10px;
+  }
