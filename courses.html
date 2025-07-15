@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Courses | Abu Zayd Institute</title>
   <link rel="stylesheet" href="style.css" />
-  <script src=script.js></script>
+  <script src="script.js" defer></script>
 </head>
 <body class="english-mode">
 
@@ -36,37 +36,40 @@
 
   <!-- SEARCH BAR -->
   <div class="container">
-    <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search courses..." />
+    <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Search courses..." aria-label="Search courses" />
   </div>
 
   <!-- COURSES SECTION -->
   <section class="section course-list container">
 
-    <!-- Course 1 -->
+    <!-- Qur'an Memorization -->
     <div class="course-card" data-title="Qur'an Memorization">
       <h3>Qur'an Memorization</h3>
-      <p>Memorize the Qur’an with proper tajweed and one-on-one guidance.</p>
-      <p><strong>Price:</strong> ₦25,000 / $28 / Month</p>
+      <p>Memorize the Qur’an from beginner to advanced with proper tajweed and one-on-one coaching.</p>
+      <p><strong>Price:</strong> ₦25,000 / $28 monthly</p>
       <p><strong>Age Group:</strong> 10+ years</p>
-      <a class="btn" href="https://wa.me/2349073528916?text=I%20want%20to%20register%20for%20Qur'an%20Memorization" target="_blank">Register</a>
+      <p><strong>Duration:</strong> Flexible (Self-paced with targets)</p>
+      <a class="btn" href="https://wa.me/2349073528916?text=I%20want%20to%20register%20for%20Qur'an%20Memorization" target="_blank" role="button">Register</a>
     </div>
 
-    <!-- Course 2 -->
+    <!-- Islamic Studies -->
     <div class="course-card" data-title="Islamic Studies">
       <h3>Islamic Studies</h3>
-      <p>Learn Hadith, Fiqh, Aqeedah, Akhlaaq and more in a structured way.</p>
-      <p><strong>Price:</strong> ₦30,000 / $34 / Month</p>
+      <p>Explore Hadith, Fiqh, Aqeedah, and Islamic Manners in a structured and youth-friendly way.</p>
+      <p><strong>Price:</strong> ₦30,000 / $34 monthly</p>
       <p><strong>Age Group:</strong> 10+ years</p>
-      <a class="btn" href="https://wa.me/2349073528916?text=I%20want%20to%20register%20for%20Islamic%20Studies" target="_blank">Register</a>
+      <p><strong>Duration:</strong> 3 – 6 months (per level)</p>
+      <a class="btn" href="https://wa.me/2349073528916?text=I%20want%20to%20register%20for%20Islamic%20Studies" target="_blank" role="button">Register</a>
     </div>
 
-    <!-- Course 3 -->
+    <!-- Personal Development -->
     <div class="course-card" data-title="Personal Development">
       <h3>Personal Development</h3>
-      <p>Coaching on confidence, time management, goals, identity, and self-discipline.</p>
-      <p><strong>Price:</strong> ₦50,000 / $57 / Month</p>
+      <p>Learn life skills, confidence, discipline, identity and purpose — grounded in Islamic values.</p>
+      <p><strong>Price:</strong> ₦50,000 / $57 monthly</p>
       <p><strong>Age Group:</strong> 15 – 35 years</p>
-      <a class="btn" href="https://wa.me/2349073528916?text=I%20want%20to%20register%20for%20Personal%20Development" target="_blank">Register</a>
+      <p><strong>Duration:</strong> 2 months (group coaching program)</p>
+      <a class="btn" href="https://wa.me/2349073528916?text=I%20want%20to%20register%20for%20Personal%20Development" target="_blank" role="button">Register</a>
     </div>
 
   </section>
@@ -75,22 +78,22 @@
   <section id="register" class="section contact-section text-center">
     <div class="container">
       <h2>Register Quickly via WhatsApp</h2>
-      <p>Click below to message our admin and secure your spot.</p>
+      <p>Click below to message our admin and secure your slot for the next class.</p>
       <a href="https://wa.me/2349073528916?text=I%20want%20to%20register%20for%20a%20course%20at%20Abu%20Zayd%20Institute" target="_blank" class="btn">📲 Register on WhatsApp</a>
     </div>
   </section>
 
   <!-- WHATSAPP FLOAT BUTTON -->
-  <a href="https://wa.me/2349073528916" class="whatsapp-float" target="_blank">💬 Chat Now</a>
+  <a href="https://wa.me/2349073528916" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">💬 Chat Now</a>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
+    <div class="container text-center">
       <p>&copy; 2025 Abu Zayd Institute. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- COURSE SEARCH JS -->
+  <!-- COURSE SEARCH FUNCTION -->
   <script>
     const searchInput = document.getElementById("searchInput");
     const courseCards = document.querySelectorAll(".course-card");
@@ -105,4 +108,4 @@
   </script>
 
 </body>
-</html>
+  </html>
