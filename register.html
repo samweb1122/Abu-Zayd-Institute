@@ -4,40 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Register | Abu Zayd Institute</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body class="english-mode">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-content">
+      <img src="./img/abuzayd.png" alt="Abu Zayd Logo" class="logo" style="max-width: 150px;" />
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="register.html" class="active">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- REGISTRATION SECTION -->
   <section class="register-wrapper">
     <div class="register-box">
-      <h2 id="welcome-text">Register Now</h2>
-      <p id="desc-text">Start your journey of Qur’an, Islamic Studies, and Personal Development today.</p>
-      <form id="registerForm">
-        <input type="text" id="name" placeholder="Your Full Name" required />
-        <input type="email" id="email" placeholder="Email Address" required />
-        <input type="tel" id="phone" placeholder="WhatsApp Number" required />
-        <select id="course" required>
+      <h2>Register Now</h2>
+      <p>Start your journey of Qur’an, Islamic Studies, and Personal Development today.</p>
+
+      <form action="https://wa.me/2349073528916" method="GET" target="_blank">
+        <input type="text" name="name" placeholder="Your Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="WhatsApp Number (e.g. +2349030736603)" required />
+        <select name="course" required>
           <option value="">-- Select a Course --</option>
           <option value="Qur'an Memorization">Qur'an Memorization</option>
           <option value="Tajweed & Recitation">Tajweed & Recitation</option>
           <option value="Islamic Studies">Islamic Studies</option>
           <option value="Personal Development">Personal Development</option>
         </select>
-        <div>
-          <button type="button" onclick="toggleSection('freeDays')">Select Free Days</button>
-          <div class="checkbox-group hidden-section" id="freeDays">
-            <label><input type="checkbox" name="free_days[]" value="Monday"> Monday</label>
-            <label><input type="checkbox" name="free_days[]" value="Tuesday"> Tuesday</label>
-            <label><input type="checkbox" name="free_days[]" value="Wednesday"> Wednesday</label>
-            <label><input type="checkbox" name="free_days[]" value="Thursday"> Thursday</label>
-            <label><input type="checkbox" name="free_days[]" value="Friday"> Friday</label>
-            <label><input type="checkbox" name="free_days[]" value="Saturday"> Saturday</label>
-            <label><input type="checkbox" name="free_days[]" value="Sunday"> Sunday</label>
-          </div>
-        </div>
-        <button type="submit">📲 Register via WhatsApp</button>
+        <button type="submit" class="btn">📲 Register via WhatsApp</button>
       </form>
     </div>
   </section>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/2349073528916" class="whatsapp-float" target="_blank">💬 Chat Now</a>
+
+  <!-- FOOTER -->
+  <footer class="footer text-center">
+    <div class="container">
+      <p>&copy; 2025 Abu Zayd Institute. All rights reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
