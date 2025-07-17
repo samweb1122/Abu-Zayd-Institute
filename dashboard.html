@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard | Abu Zayd Institute</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <script  src="script.js"></script>
   
 </head>
 <body class="english-mode">
@@ -44,22 +44,6 @@
     </div>
   </section>
 
-  <script>
-    function switchTab(tabId) {
-      const contents = document.querySelectorAll(".tab-content");
-      const buttons = document.querySelectorAll(".tab-btn");
-
-      contents.forEach((content) => {
-        content.classList.remove("active");
-      });
-
-      buttons.forEach((btn) => {
-        btn.classList.remove("active");
-      });
-
-      document.getElementById(tabId).classList.add("active");
-      event.target.classList.add("active");
-    }
-  </script>
+  
 </body>
 </html>
