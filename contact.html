@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us | Abu Zayd Institute</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body class="english-mode">
 
   <!-- HEADER -->
   <header class="header">
     <div class="container header-content">
+      <img src="./img/abuzayd.png" alt="Abu Zayd Logo" class="logo" style="max-width: 150px;" />
       <nav>
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
@@ -28,28 +28,19 @@
   <section class="contact-wrapper">
     <div class="contact-box">
       <h2>Contact Us</h2>
-      <p>Have questions, feedback or want to register? Fill the form below — it sends to our email and WhatsApp.</p>
+      <p>Register or reach out to us.<br>Use the form below or WhatsApp us directly.</p>
 
-      <!-- ✅ FORM TO EMAIL -->
-      <form action="https://formsubmit.co/el/weluvu" method="POST">
-        <!-- HONEYPOT to prevent spam -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://abuzayd.github.io/thankyou.html" />
-
-        <input type="text" name="Full Name" placeholder="Full Name" required />
-        <input type="email" name="Email" placeholder="Email Address" required />
-        <input type="tel" name="WhatsApp Number" placeholder="WhatsApp Number (e.g. +234...)" required />
-        <textarea name="Message" rows="4" placeholder="Your message or course of interest..." required></textarea>
-
-        <button type="submit" class="btn">📩 Submit to Email</button>
+      <form action="https://wa.me/2349073528916" method="GET" target="_blank">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="WhatsApp Number" required />
+        <textarea name="message" rows="4" placeholder="Your message or course of interest..." required></textarea>
+        <button type="submit" class="btn">📩 Submit via WhatsApp</button>
       </form>
 
-      <hr style="margin: 30px 0;">
-
-      <!-- ✅ DIRECT WHATSAPP CHAT -->
-      <div class="direct-whatsapp text-center">
-        <p>Or chat with us directly:</p>
-        <a href="https://wa.me/2349073528916" target="_blank" class="btn">📱 Chat via WhatsApp</a>
+      <div class="direct-whatsapp">
+        <p>Or chat with us directly on WhatsApp:</p>
+        <a href="https://wa.me/2349073528916" target="_blank" class="btn">📱 Chat on WhatsApp</a>
       </div>
     </div>
   </section>
