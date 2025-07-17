@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Abu Zayd Institute</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    .dashboard-wrapper {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .tab-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 1.5rem;
+    }
+
+    .tab-buttons button {
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #f0f0f0;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .tab-buttons button.active {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="english-mode">
+  <section class="dashboard-wrapper">
+    <h2>Welcome to Your Dashboard</h2>
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="switchTab('profile')">Profile</button>
+      <button class="tab-btn" onclick="switchTab('schedule')">Class Schedule</button>
+      <button class="tab-btn" onclick="switchTab('notes')">Notes</button>
+    </div>
+
+    <div id="profile" class="tab-content active">
+      <h3>My Profile</h3>
+      <p><strong>Name:</strong> Abu Zayd Student</p>
+      <p><strong>Email:</strong> student@example.com</p>
+      <p><strong>Phone:</strong> +234 9012345678</p>
+      <p><strong>Course:</strong> Tajweed & Recitation</p>
+    </div>
+
+    <div id="schedule" class="tab-content">
+      <h3>Class Schedule</h3>
+      <ul>
+        <li><strong>Monday:</strong> 4:00 PM – Tajweed</li>
+        <li><strong>Wednesday:</strong> 4:00 PM – Qur’an Memorization</li>
+        <li><strong>Friday:</strong> 4:00 PM – Personal Development</li>
+      </ul>
+    </div>
+
+    <div id="notes" class="tab-content">
+      <h3>Notes</h3>
+      <ul>
+        <li><strong>Lesson 1:</strong> Rules of Noon Saakin</li>
+        <li><strong>Lesson 2:</strong> Stories of the Prophets</li>
+        <li><strong>Lesson 3:</strong> Discipline and Routine</li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    function switchTab(tabId) {
+      const contents = document.querySelectorAll(".tab-content");
+      const buttons = document.querySelectorAll(".tab-btn");
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      buttons.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      document.getElementById(tabId).classList.add("active");
+      event.target.classList.add("active");
+    }
+  </script>
+</body>
+</html>
