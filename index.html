@@ -1,40 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abu Zayd Institute</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" ></script>
+  <link rel="stylesheet" href="./css/style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body class="english-mode">
   <!-- HEADER -->
   <header class="header">
     <div class="container header-content">
+      <img src="./img/abuzayd.png" alt="Abu Zayd Logo" class="logo" style="max-width: 150px;" />
       <nav>
         <ul class="nav-list">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="courses.html">Courses</a></li>
-          <li><a href="register.html" class="btn nav-btn">Register</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li><button class="btn nav-btn" onclick="openLoginForm()">Login</button></li>
+          <li><button class="btn nav-btn" onclick="toggleRegister()">Register</button></li>
         </ul>
       </nav>
     </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero">
+  </header>  <!-- HERO SECTION -->  <section class="hero">
     <div class="container text-center">
-      <h1>Welcome to Abu Zayd Institute</h1>
-      <p>Learn Qur'an, Islamic Studies, and Personal Development — Anywhere, Anytime.</p>
+      <h1 id="welcome-text">Welcome to Abu Zayd Institute</h1>
+      <p id="desc-text">Learn Qur'an, Islamic Studies, and Personal Development — Anywhere, Anytime.</p>
       <button class="btn switch" onclick="switchLanguage()">Switch Language</button>
     </div>
-  </section>
-
-  <!-- ABOUT PREVIEW -->
-  <section class="section about">
+  </section>  <!-- ABOUT PREVIEW -->  <section class="section about">
     <div class="container text-center">
       <h2>Why Choose Us?</h2>
       <p>
@@ -42,18 +36,12 @@
       </p>
       <a href="about.html" class="btn">Learn More</a>
     </div>
-  </section>
-
-  <!-- COUNTDOWN -->
-  <section class="section countdown">
+  </section>  <!-- COUNTDOWN -->  <section class="section countdown">
     <div class="container text-center">
       <h2>Enrollment Closes In:</h2>
       <div id="countdown" class="countdown-display">Loading countdown...</div>
     </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="section testimonials">
+  </section>  <!-- TESTIMONIALS -->  <section class="section testimonials">
     <div class="container">
       <h2 class="text-center">What Students Say</h2>
       <div class="slider">
@@ -62,13 +50,27 @@
         <div class="slide">"Learning online was convenient, but also very impactful. May Allāh bless this work."</div>
       </div>
     </div>
-  </section>
+  </section>  <!-- WHATSAPP FLOAT --><a href="https://wa.me/2349073528916" class="whatsapp-float" target="_blank">💬 Chat with Us</a>
 
-  <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/2349073528916" class="whatsapp-float" target="_blank">💬 Chat with Us</a>
-
-  <!-- FOOTER -->
-  <footer class="footer text-center">
+  <!-- REGISTER POPUP -->  <div id="registerPopup" class="popup-overlay">
+    <div class="popup-form">
+      <span class="close-btn" onclick="toggleRegister()">&times;</span>
+      <h2>Register Now</h2>
+      <form id="registerForm">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email Address" required />
+        <input type="tel" id="phone" placeholder="WhatsApp Number" required />
+        <select id="course" required>
+          <option value="">-- Select Course --</option>
+          <option>Qur'an Memorization</option>
+          <option>Tajweed & Recitation</option>
+          <option>Islamic Studies</option>
+          <option>Arabic Language</option>
+        </select>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </div>  <!-- FOOTER -->  <footer class="footer text-center">
     <div class="container">
       <p>&copy; 2025 Abu Zayd Institute. All rights reserved.</p>
     </div>
