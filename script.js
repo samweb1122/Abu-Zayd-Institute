@@ -160,4 +160,11 @@ Comments: ${comments}`;
       document.getElementById(tabId).classList.add("active");
       event.target.classList.add("active");
     }
+
+// Optional enhancement
+document.querySelectorAll(".nav-list a").forEach(link => {
+  if (window.location.pathname.includes(link.getAttribute("href"))) {
+    link.classList.add("active");
+  }
+});
   
